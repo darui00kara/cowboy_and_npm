@@ -22,3 +22,12 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
     end
     ```
 
+- memo
+
+1. npm init
+2. Edit package.json
+3. npm install
+4. Create static files
+5. Edit brunch-config.js
+7. brunch build
+8. Check compile files

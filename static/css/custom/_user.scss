@@ -1,0 +1,48 @@
+/* Users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-top: 1px solid #eeeeee;
+    &:last-child {
+      border-bottom: 1px solid #eeeeee;
+    }
+  }
+}
+
+/* gravatar */
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+/* following and followers */
+
+.stats {
+  overflow: auto;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid #eeeeee;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: #3677a3;
+    }
+  }
+  strong {
+    display: block;
+  }
+}

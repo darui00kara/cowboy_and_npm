@@ -19,7 +19,8 @@ exports.config = {
 
   paths: {
     watched: [
-      "static"
+      "static",
+      "elm"
     ],
 
     public: "priv/static"
@@ -38,6 +39,11 @@ exports.config = {
     },
     copycat: {
       "fonts": ["node_modules/bootstrap-sass/assets/fonts/bootstrap"]
+    },
+    elmBrunch: {
+      elmFolder: "elm",
+      mainModules: ["SeatServer.elm"],
+      outputFolder: "../static/vendor"
     }
   },
 

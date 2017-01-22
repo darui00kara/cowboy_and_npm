@@ -20,7 +20,7 @@ exports.config = {
   paths: {
     watched: [
       "static",
-      "elm"
+      "elm/SeatServer.elm"
     ],
 
     public: "priv/static"
@@ -49,7 +49,7 @@ exports.config = {
 
   modules: {
     autoRequire: {
-      "js/app.js": ["static/js"]
+      "app.js": ["static/js"]
     }
   },
 

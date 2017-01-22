@@ -1,5 +1,5 @@
 module SeatServer exposing(..)
 
-import Html
+import Html exposing (text)
 
-main = Html.text "Hello from Elm!"
+main = text "Hello from Elm"

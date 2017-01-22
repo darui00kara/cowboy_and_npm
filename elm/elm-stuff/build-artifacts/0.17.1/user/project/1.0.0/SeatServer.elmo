@@ -1,0 +1,3 @@
+var _user$project$SeatServer$main = {
+	main: _elm_lang$html$Html$text('Hello from Elm')
+};

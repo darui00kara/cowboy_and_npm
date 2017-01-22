@@ -23,8 +23,8 @@ defmodule CowboyAndNpm do
   end
 
   defp routes do
-    paths = [{"/", :cowboy_static, {:priv_file, :cowboy_and_npm, "index.html"}},
-             {"/priv/static/js/[...]", :cowboy_static, {:priv_dir, :cowboy_and_npm, "static/js"}}]
+    paths = [{"/:html", Cowboy2Example.TopPageHandler, %{}},
+             {"/static/js/:javascript", Cowboy2Example.JavaScriptHandler, %{}}]
     [{:_, paths}]
   end
 end

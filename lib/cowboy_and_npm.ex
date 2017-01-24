@@ -16,6 +16,11 @@ defmodule CowboyAndNpm do
       # worker(CowboyAndNpm.Worker, [arg1, arg2, arg3]),
     ]
 
+    app_path = Path.expand("../", __DIR__)
+    brunch_cmd = "node_modules/brunch/bin/brunch"
+    {message, 0} = System.cmd("node", [brunch_cmd, "build"], [cd: app_path])
+    IO.inspect(message)
+
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: CowboyAndNpm.Supervisor]

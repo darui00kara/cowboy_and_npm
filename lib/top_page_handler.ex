@@ -1,4 +1,4 @@
-defmodule Cowboy2Example.TopPageHandler do
+defmodule CowboyAndNpm.TopPageHandler do
   def init(req, opts) do
     method = :cowboy_req.method(req)
     param = :cowboy_req.binding(:html, req)

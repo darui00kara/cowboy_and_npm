@@ -14,12 +14,15 @@ defmodule CowboyAndNpm do
     children = [
       # Starts a worker by calling: CowboyAndNpm.Worker.start_link(arg1, arg2, arg3)
       # worker(CowboyAndNpm.Worker, [arg1, arg2, arg3]),
+      worker(CowboyAndNpm.BrunchWatcher, [],
+             id: {"node", "brunch", "watch"},
+             restart: :transient)
     ]
 
-    app_path = Path.expand("../", __DIR__)
-    brunch_cmd = "node_modules/brunch/bin/brunch"
-    {message, 0} = System.cmd("node", [brunch_cmd, "build"], [cd: app_path])
-    IO.inspect(message)
+        #app_path = Path.expand("../", __DIR__)
+        #brunch_cmd = "node_modules/brunch/bin/brunch"
+        #{message, 0} = System.cmd("node", [brunch_cmd, "build"], [cd: app_path])
+        #IO.inspect(message)
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
     # for other strategies and supported options
@@ -28,8 +31,8 @@ defmodule CowboyAndNpm do
   end
 
   defp routes do
-    paths = [{"/:html", Cowboy2Example.TopPageHandler, %{}},
-             {"/static/js/:javascript", Cowboy2Example.JavaScriptHandler, %{}}]
+    paths = [{"/:html", CowboyAndNpm.TopPageHandler, %{}},
+             {"/static/js/:javascript", CowboyAndNpm.JavaScriptHandler, %{}}]
     [{:_, paths}]
   end
 end

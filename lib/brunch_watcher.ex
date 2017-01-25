@@ -8,9 +8,7 @@ defmodule CowboyAndNpm.BrunchWatcher do
 
   def watch(cmd, args, opts) do
     case System.cmd(cmd, args, opts) do
-      {message, 0} ->
-        IO.puts(message)
-        :ok
+      {message, 0} -> :ok
       {_, _} ->
         Process.sleep(2000)
         exit(:brunch_cmd_error)
